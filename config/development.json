@@ -1,0 +1,10 @@
+{
+	"migration": {
+		"run": true
+	},
+	"logger": {
+		"file": {
+			"enabled": false
+		}
+	}
+}

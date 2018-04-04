@@ -1,0 +1,36 @@
+{
+  "name": "reference-service",
+  "version": "1.0.0",
+  "description": "reference service",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "node $npm_package_main",
+    "debug": "node --nolazy --inspect-brk=2029 $npm_package_main",
+    "watch": "npm run watch:dev",
+    "watch:dev": "pm2 start $npm_package_main --name $npm_package_name --watch",
+    "test": "mocha --timeout 10000 --recursive",
+    "test:unit": "mocha --timeout 10000 --recursive test/unit",
+    "test:integration": "mocha --timeout 10000 --recursive test/integration",
+    "test:e2e": "mocha --timeout 10000 --recursive test/e2e",
+    "posttest": "npm run lint",
+    "lint": "eslint .",
+    "validate-swagger": "swagger-validator -s http://localhost:2020/swagger.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.myjar.com:7999/fnx/myjar-reference-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@myjar/service-scaffold": "git+ssh://git@git.myjar.com:7999/pl/node-service-scaffold-lib.git#^0.2.0"
+  },
+  "devDependencies": {
+    "@myjar/service-dev-scaffold": "git+ssh://git@git.myjar.com:7999/pl/node-service-dev-scaffold-lib.git#^0.2.0",
+    "request-promise-native": "^1.0.5",
+    "testdouble": "^3.3.3"
+  },
+  "eslintConfig": {
+    "extends": "@myjar"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"service": {
+		"port": "2020"
+	},
+
+	"metrics": {
+		"host": "localhost"
+	},
+
+	"logger": {
+		"verbosity": 3,
+		"file": {
+			"enabled": true,
+			"level": "debug",
+			"filename": "logs/service.log"
+		},
+		"console": {
+			"enabled": true,
+			"level": "debug"
+		}
+	},
+
+	"db": {
+		"connString": "postgres://skeleton:skeleton@services.dev.myjar.com:5432/Skeleton"
+	},
+
+	"migration": {
+		"run": false
+	}
+}

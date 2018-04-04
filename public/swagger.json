@@ -1,0 +1,70 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "myjar-reference-service.js",
+    "description": "MYJAR reference-service.js"
+  },
+  "host": "foo.myjar.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "basePath": "/api/myjar-reference-service/",
+  "paths": {
+    "v1/healthcheck": {
+      "get": {
+        "summary": "Check if service is up and running, including dependencies",
+        "responses": {
+          "200": {
+            "description": "Service is up and running"
+          },
+          "500": {
+            "description": ":("
+          }
+        }
+      }
+    },
+    "v1/status": {
+      "get": {
+        "summary": "Check if service is up and running",
+        "responses": {
+          "200": {
+            "description": "Service is up and running"
+          },
+          "500": {
+            "description": ":("
+          }
+        }
+      }
+    },
+    "v1/example": {
+      "post": {
+        "summary": "Example model",
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "500": {
+            "description": "nok"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ExampleModel": {
+      "properties": {
+        "name": {
+          "description": "The unique identifier for a product",
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    }
+  }
+}
